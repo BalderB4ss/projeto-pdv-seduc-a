@@ -89,6 +89,26 @@
             {% endif %}
         </tbody>
     </table>
+    
+    <br>
+
+    {% if total_paginas > 1 %}
+
+    <div>
+        <p>
+            Página {{ pagina}} de {{total_paginas}} ({{total_produtos}}) Produtos
+        </p>
+        {% if pagina > 1 %}
+            <a href="/produtos/?pagina={{pagina-1}}&por_pagina={{por_pagina}}&busca={{busca}}&categoria_id{{categoria_id}}">Anterior</a>
+        {% endif %}
+        {% if pagina < total_paginas %}
+            <a href="/produtos/?pagina={{pagina+1}}&por_pagina={{por_pagina}}&busca={{busca}}&categoria_id{{categoria_id}}">Próximo</a>
+        {% endif %}
+    </div>
+
+    {% endif %}
+
+    <br>
 
     <p><a href="/">← Dashboard</a></p>
 </body>
